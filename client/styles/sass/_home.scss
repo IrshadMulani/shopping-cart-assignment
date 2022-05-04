@@ -1,0 +1,99 @@
+.category {
+    background: #fff;
+    // box-shadow: 2px 2px 4px rgba(0, 0, 0, .1);
+    box-shadow: rgba(0, 0, 0, 0.20) 0px 25px 20px -20px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    margin: 30px;
+    
+    @include respond(tab-port){
+        margin: 20px 0;
+    }
+
+    @include respond(phone){
+        margin: 20px 0;
+    }
+
+    &__productimg {
+        display: flex;
+        flex: 1 0 20%;
+
+        img {
+            max-width: 100%;
+        }
+        @include respond(phone){
+            flex: 1 0 30%;
+        }
+    }
+
+    &__details {
+        display: flex;
+        flex: 1 1 70%;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+
+        p{
+            margin-bottom: 15px;
+        }
+    }
+
+    &__title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+}
+
+.carousel-wrapper{
+    background: #fff;
+    // box-shadow: 2px 2px 4px rgba(0, 0, 0, .1);
+    box-shadow: rgba(0, 0, 0, 0.20) 0px 25px 20px -20px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    margin: 30px;
+}
+
+.carousel-indicators{
+    margin-bottom: 0;
+}
+
+.carousel-indicators [data-bs-target] {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    width: 8px;
+    height: 8px;
+    cursor: pointer;
+    background-color: #000;
+    border-radius: 50%;
+    margin-bottom: 0;
+}
+
+.carousel-control-next, .carousel-control-prev{
+    font-size: 12px;
+}
+.carousel-control-next::after{
+    position: absolute;
+    content: 'NEXT';
+}
+
+.carousel-control-next-icon{
+    background: rgba(0, 0, 0, 0.40);
+    padding: 10px;
+}
+
+.carousel-control-prev-icon::after{
+    position: absolute;
+    content: 'PREV';
+    right: 3px;
+    top: 7px;
+}
+
+.carousel-control-prev-icon{
+    background: rgba(0, 0, 0, 0.40);
+    padding: 10px;
+    position: relative
+}

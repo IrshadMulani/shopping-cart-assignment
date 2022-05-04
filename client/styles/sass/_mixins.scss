@@ -1,0 +1,32 @@
+// MEDIA QUERY MANAGER
+
+/*
+
+0 - 600px - Phone
+600 - 900px - Tablet Portrait
+900 - 1200px - Tablet Landscape
+[1200 - 1800px] is where our normal styles apply
+1800px + : Big Desktop
+*/
+
+@mixin respond($brakpoint){
+    @if $brakpoint == phone {
+        @media (max-width: 600px){ @content };
+    }
+}
+
+@mixin respond($brakpoint){
+    @if $brakpoint == phone {
+        @media (max-width: 600px){ @content };
+    }
+    @if $brakpoint == tab-port {
+        @media (max-width: 900px){ @content };
+    }
+    @if $brakpoint == tab-land {
+        @media (max-width: 1200px){ @content };
+    }
+    @if $brakpoint == big-desktop {
+        @media (min-width: 1800px){ @content };
+    }
+}
+

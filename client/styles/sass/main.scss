@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700');
+@import "header";
+@import "variables";
+@import "mixins";
+@import "home";
+@import "products";
+@import "cart";
+
+
+:root {
+  --app-font: 'Dosis', sans-serif;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+ul{
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+img, svg {
+  vertical-align: middle;
+}
+
+/*-- Utility classes --*/
+.d-block {
+    display: block;
+}
+
+.d-flex{
+  display: flex;
+}
+
+.btn {
+    background: #bf2957;
+    border: 0;
+    outline: 0;
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: .25rem;
+    font-weight: 600;
+}
+
+.btn-round{
+  border-radius: 50%;
+}
+
+body {
+    font-family: var(--app-font);
+    font-size: 16px;
+    line-height: 20px;
+}
+
+
+
+footer {
+    background: #eaeaea;
+    display: flex;
+    padding: 10px 0;
+    justify-content: center;
+    align-items: center;
+    color: $heading-color;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/*-- signup page --*/
+
+.login-container {
+    width: 900px;
+    display: flex;
+    margin: 0 auto;
+    padding: 30px;
+
+    @include respond(tab-port){
+        flex-direction: column;
+        padding: 10px;
+        width: auto;
+    }
+
+    @include respond(phone){
+        flex-direction: column;
+        padding: 10px;
+        width: auto;
+    }
+
+    h1 {
+        margin: 20px 0;
+    }
+
+    .form-container {
+        padding: 0 30px 0 50px;
+        width: 50%;
+
+        @include respond(tab-port){
+            padding: 10px;
+            width: 95%;
+        }
+    
+        @include respond(phone){
+            padding: 10px;
+            width: 90%;
+        }
+    }
+
+    .submit-btn {
+        width: 96%;
+    }
+}
+
+
+@mixin label-inactive() {
+  font-size: 16px;
+  transform: translateY(0);
+}
+
+@mixin label-active() {
+  font-size: 14px;
+  transform: translateY(-14px);
+}
+
+.form-field {
+  display: block;
+  margin-bottom: 16px;
+}
+.form-field__label {
+  @include label-active();
+//   display: block;
+  font-weight: normal;
+  left: 0;
+  margin: 0;
+  padding: 18px 12px 0;
+  position: absolute;
+  top: 0;
+  transition: all $animation-duration;
+//   width: 100%;
+}
+.form-field__control {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.form-field__bar {
+  border-bottom: 2px solid $primary-color;
+  bottom: 0;
+  content: "";
+  display: block;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  transform: scaleX(0);
+  transition: all $animation-duration;
+  width: 1%;
+}
+.form-field__input,
+.form-field__textarea {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #999;
+  color: #333;
+  display: block;
+  font-size: 14px;
+  margin-top: 24px;
+  outline: 0;
+  padding: 0 12px 10px 12px;
+  width: 100%;
+  
+  // IE 10-11
+  &:-ms-input-placeholder {
+    ~ .form-field__label {
+      @include label-inactive();
+    }
+  }
+  // All other browsers except Edge
+  &:placeholder-shown {
+    ~ .form-field__label {
+      @include label-inactive();
+    }
+  }
+  &:focus {
+    ~ .form-field__label {
+      color: $primary-color;
+      @include label-active();
+    }
+    ~ .form-field__bar {
+      border-bottom: 2px solid $primary-color;
+      transform: scaleX(150);
+    }
+  }
+}
+.form-field__textarea {
+  height: 150px;
+}
+
+.alert{
+    // padding: 8px;
+    font-weight: 600;
+    font-size: 12px;
+    display: none;
+}
+
+.alert-warning{
+    color: #bf2957;
+}

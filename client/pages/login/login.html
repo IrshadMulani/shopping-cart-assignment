@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Sabkabazaar.in: Online Shopping India - Buy mobiles, laptops, cameras, books, watches, apparel, shoes and e-Gift Cards. Free Shipping & Cash on Delivery Available.">
+    <meta name="keywords"
+        content="Sabkabazaar.in, Sabkabazaar, Online Shopping, online shopping india, india shopping online, Sabkabazaar india, buy online, buy mobiles online, buy books online, buy movie dvd's online, kindle, kindle fire hd, kindle e-readers, ebooks, computers, laptop, toys, trimmers, watches, fashion jewellery, home, kitchen, small appliances, beauty, Sports, Fitness & Outdoors">
+    <title>Login</title>
+    
+    <link rel="stylesheet" href="../../styles/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="">
+            <img src="../../../static/images/logo.png" class="logo" alt="Sabka Bazaar">
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../product/products.html">Products</a></li>
+            </ul>
+        </nav>
+
+        <div class="right-nav">
+            <nav>
+                <ul>
+                    <li><a href="#">Sign In</a></li>
+                    <li><a href="../register/register.html">Register</a></li>
+                </ul>
+            </nav>
+            <button class="header__cart" type="button">
+                <i class="fa-solid fa-cart-shopping cart-icon"></i>
+                <span>0 Items</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="login-container flex-sm-column">
+            <div>
+                <h1 class="d-block">Login</h1>
+                <p>Get access to your Orders, Wishlist and Recommendations</p>
+            </div>
+
+            <div class="form-container">
+                <form name="myForm" onsubmit="validateForm(event)" method="post">
+                    <div class="form-field">
+                        <div class="form-field__control" id="emailField">
+                            <input id="email" name="email" type="text" class="form-field__input" placeholder=" " />
+                            <label for="email" class="form-field__label">Email</label>
+                            <div class="form-field__bar"></div>
+                            <span class="alert alert-warning"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <div class="form-field__control" id="passwordField">
+                            <input id="password" type="password" name="password" class="form-field__input"
+                                placeholder=" " minlength="6" />
+                            <label for="password" class="form-field__label">Password</label>
+                            <div class="form-field__bar">dsfadsf</div>
+                            <span class="alert alert-warning"></span>
+                        </div>
+                    </div>
+
+                    <!-- <input type="submit"  value="Sign up"> -->
+                    <button type="submit" class="btn submit-btn">
+                        Login
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        Copyright 2022-2023 Sabka Bazaar Grocery Supplies Pvt Ltd
+    </footer>
+
+    <script src="./login.js"></script>
+</body>
+
+</html>
